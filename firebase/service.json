@@ -1,8 +1,14 @@
 {
-  "apiKey": "AIzaSyDktl6Vropk7OS4WIjGuGCZ-aAPQccyTtQ",
-  "authDomain": "basic-commerce-2627.firebaseapp.com",
-  "projectId": "basic-commerce-2627",
-  "storageBucket": "basic-commerce-2627.appspot.com",
-  "messagingSenderId": "493477090956",
-  "appId": "1:493477090956:web:8ac7b1f99cd7b840a14da9"
-}
+    "type": "service_account",
+    "project_id": "basic-commerce-2627",
+    "private_key_id": "dd88f250c0e1358bbc1983544190a0d81fe6d819",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDESuUVEcfltJDM\nTwPDfktIlqy8hFmM+FBi1G7Y5a8JFQlzsoVNin0FSQcP2YsN45A+YC++Vwn817Js\n8c0tzrbeNsgadsM+7EotzW1yQKDfOCUO1UWLlBvVQ/Ye5GOkuZEEiiLsf530pV2B\nY2OhkPqQQw+FJi7hONjaVHgjDPqa55Wv0gIKjq/y115cE9aozC0WoH5AK5qwX5c9\nm9CqtpfTTDRa2/lnrHq4w6MSOOO99ZLRj9scTLcpodunpWMm54afNGsGOXFBGrZ2\naUz6h5LqN8R+hnEvn7pOkXqJgb6Eb4eNN+HV+WKmNViJ3m3OAZUPKiGet1jyrZOm\nmRg/24F7AgMBAAECggEAAhf2Z4ogArAxVyyEksI3FVgeEYir19gSK2uunvucKVGj\nHyvJRjFy8ep8e8vLMuO5dyDZgYM2JQ875POTR6jLxIT7D2Uy4entRJ3LTAuqa5cS\nthzKOBnlThoCdwPimDAufsjmZHVb/u8Al0+zEVcVhRJiCP6GQ3qyvWlnOqB5z8sh\nvg9A2TFiqzGA5q10Yk44ZxkZVtT+PKbUNUZRLUDS6TmNvRbgMmyZxStuuaR+qXaY\nAysMISWUbaqRlpxJCcmYDzoQTLCdkAHpP1nWyE6Yr3oCHNebrKEpsLlsAlL9fByp\nwyhLtkFTnswNjot8b9VtD1mb3CPxRKxL+2pY8/f6IQKBgQDz55IvCdtpXeV0kof1\n8ISFVgfRQurrWFw7AT8st+p2M6kh0pZuI1MYVhpIZvVU0bPKo5v0ePAlpvZ6vgQO\nXqu68GSp/8DufSzD8g6m4YNhx3i4CD5JQ0T8trldWbh5Gp2AuA9ege4hhENmQU5y\n4Okb0oH2nXj9cWsdnhu5f1RHqwKBgQDOBuCi3LkvqcHmyoPMTGJ/WX/6Smg2nZL6\nC9OAlKyTI6206AA4Yy/to8cO1JF0kbPftLTMkGx44eRrGgUTkLM+vz9Dfv52FcsP\nuFQB+EhQmvv+mYr8/IdN7pnzh1E3F7qiLt17b39ltgZTe9Ho3QgIJs3QRRHknloG\nzWegjxydcQKBgQDFJlPFbeRK4TkN5zu7EnUsCgQ7pCmbnkq+7x0PmoIMlWmLC1vJ\nHwiVzVNlXsPDkdYQX/s5u1/yL2lggaNpsiCB9LqJp09d9xRuNoSdY//8023C4/bk\n5VkoJNLkoBc63MafOyhBLik8MlsAlp1Awofqk1e17kfUJQ9+W0TxxfhsDQKBgQCI\nUBKWjtVTzMyHB5y2Mh/FRJEhJ9PVtuIE4Ig6faPE4olOtWVX6YBPidntXQU0DCbn\nryckZbXvMP4xQpDzRfziWiTgYoi31ml46Ctk9kHaWwC5jhtgkTBwhpqDfxdkDSYl\noj5WKgovYITE/Zp/qKZkxk/MKbbR/VdxQrv6hlWXcQKBgHk3yleTHvYm/E/6qd7t\ni2styrOmx+owwddVIpNFWReHJ2Dsc604xWuRogws7WiX77at01QfD66H9QOfMHAc\nm3yEGkizbCKdPgroV4Yo3Gtx7DjOwto02XtqrYLyCUh5BjcpE+lEu6xDJu8rpLOo\nlf8ci95912TUHx71poZmUE+f\n-----END PRIVATE KEY-----\n",
+    "client_email": "firebase-adminsdk-ba7cs@basic-commerce-2627.iam.gserviceaccount.com",
+    "client_id": "104338241953031562965",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-ba7cs%40basic-commerce-2627.iam.gserviceaccount.com",
+    "universe_domain": "googleapis.com"
+  }
+  

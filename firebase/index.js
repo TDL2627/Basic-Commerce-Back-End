@@ -1,7 +1,9 @@
 const admin = require("firebase-admin");
-
-import * as serviceAccount from './service.json';
+const functions = require("firebase/compat/functions");
+const serviceAccount = require("./service.json");
 
 admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount)
-});
+    credential: admin.credential.cert(serviceAccount)
+  });
+const db = admin.firestore();
+module.exports = { admin, db, functions };
