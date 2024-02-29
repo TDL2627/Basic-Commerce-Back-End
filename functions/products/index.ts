@@ -18,16 +18,7 @@ const getAllProducts = async () => {
   return products;
 };
 
-const createProduct = async (
-  description: string,
-  name: string,
-  price: number
-) => {
-  const product = {
-    name,
-    description,
-    price,
-  };
+const createProduct = async (product: any) => {
   const docRef = db.collection("products").doc();
   const id = docRef.id;
   const productWithId = {
@@ -46,10 +37,23 @@ const deleteProduct = async (id: string) => {
   await db.collection("products").doc(id).delete();
 };
 
+const deleteMultipleProducts = async (products: any) => {
+  products.forEach(async (productId: string) => {
+    await db.collection("products").doc(productId).delete();
+  });
+};
+const createMultipleProducts = async (products: any) => {
+  products.forEach(async (product: string) => {
+    await createProduct(product);
+  });
+};
+
 export {
   createProduct,
   deleteProduct,
   updateProduct,
   getAllProducts,
   getProduct,
+  deleteMultipleProducts,
+  createMultipleProducts
 };

@@ -36,7 +36,8 @@ router.put("/:id", async (req: Request, res: Response) => {
 // POST a new product
 router.post("/", async (req: Request, res: Response) => {
   const { name, description, price } = req.body;
-  await createProduct(description, name, price);
+  const product = { name, description, price };
+  await createProduct(product);
   return res.status(200).json({ message: "Product created successfully" });
 });
 
