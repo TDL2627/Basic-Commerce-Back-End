@@ -1,6 +1,6 @@
-const { db } = require("../../firebase");
+import { db } from "../../firebase";
 
- const createUser = async () => {
+const createUser = async () => {
   const user = {
     id: "USA",
     name: "Los Angeles",
@@ -11,4 +11,4 @@ const { db } = require("../../firebase");
   const result = await db.collection("customers").doc().set(user);
   console.log(result, "aye");
 };
-module.exports = { createUser };
+export { createUser };
