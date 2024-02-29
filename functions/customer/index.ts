@@ -13,4 +13,8 @@ const createUser = async (email: string, name: string) => {
   };
   await docRef.set(userWithId);
 };
-export { createUser };
+
+const deleteUser =  async (id: string)=>{
+  const res = await db.collection("customers").doc(id).delete();
+}
+export { createUser, deleteUser };

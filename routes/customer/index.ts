@@ -1,35 +1,22 @@
 import { Request, Response, Router } from "express";
-import { createUser } from "../../functions/customer";
+import { createUser, deleteUser } from "../../functions/customer";
 
 const router = Router();
 
-// Sample data (replace with your database operations)
-let customers: any = [
-  { id: 1, name: "John Doe" },
-  { id: 2, name: "Jane Smith" },
-  { id: 3, name: "Bob Johnson" },
-];
-
 // GET all customers
 router.get("/", (req: Request, res: Response) => {
-  res.json(customers);
+  // extra functionality
 });
 
 // GET customer by ID
 router.get("/:id", (req: Request, res: Response) => {
-  // const customerId = parseInt(req.params.id);
-  // const customer = customers.find((customer) => customer.id === customerId);
-  // if (customer) {
-  //   res.json(customer);
-  // } else {
-  //   res.status(404).json({ message: "Customer not found" });
-  // }
+  // extra functionality
 });
 
 // DELETE customer by ID
-router.delete("/:id", (req: Request, res: Response) => {
-  // const customerId = parseInt(req.params.id);
-  // customers = customers.filter((customer) => customer.id !== customerId);
+router.delete("/:id", async (req: Request, res: Response) => {
+  const customerId = req.params.id;
+  await deleteUser(customerId);
   res.json({ message: "Customer deleted successfully" });
 });
 
@@ -38,7 +25,7 @@ router.post("/", async (req: Request, res: Response) => {
   const { email, name } = req.body;
 
   await createUser(email, name);
-  return res.status(201).json({ message: "User created successfully" });
+  return res.status(200).json({ message: "User created successfully" });
 });
 
 export default router;
