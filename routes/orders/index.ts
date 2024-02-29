@@ -1,31 +1,23 @@
-const express = require('express');
-const router = express.Router();
+import { Request, Response, Router } from "express";
+import {
+  createMultipleOrders,
+  getAllOrders,
+} from "../../functions/orders";
+const router = Router();
 
-// Dummy data for orders (replace with your actual data store)
-let orders = [
-  { id: 1, product: 'Product A', quantity: 2 },
-  { id: 2, product: 'Product B', quantity: 1 }
-];
-
-// GET all orders
-router.get('/', (req, res) => {
-  res.json(orders);
+// creating multiple orders
+router.post("/", async (req: Request, res: Response) => {
+  const { orders } = req.body;
+  await createMultipleOrders(orders);
+  return res.status(200).json({ message: "Orders created successfully" });
 });
 
-// DELETE order by ID
-router.delete('/:id', (req, res) => {
-  const orderId = parseInt(req.params.id);
-  orders = orders.filter(order => order.id !== orderId);
-  res.send(`Order with ID ${orderId} deleted`);
+// fetch all orders
+router.get("/", async (req: Request, res: Response) => {
+  const orders = await getAllOrders();
+  console.log(orders);
+  res.status(200).json({ message: "Orders retrieved successfully" })
+  return orders;
 });
 
-// POST new order
-router.post('/', (req, res) => {
-  const { product, quantity } = req.body;
-  const newOrderId = orders.length + 1;
-  const newOrder = { id: newOrderId, product, quantity };
-  orders.push(newOrder);
-  res.send(`Order added: ${JSON.stringify(newOrder)}`);
-});
-
-module.exports = router;
+export default router;
