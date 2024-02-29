@@ -35,7 +35,9 @@ router.delete("/:id", (req: Request, res: Response) => {
 
 // POST a new customer
 router.post("/", async (req: Request, res: Response) => {
-  await createUser();
+  const { email, name } = req.body;
+
+  await createUser(email, name);
   return res.status(201).json({ message: "User created successfully" });
 });
 

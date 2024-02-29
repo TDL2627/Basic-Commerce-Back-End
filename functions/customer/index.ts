@@ -1,14 +1,16 @@
 import { db } from "../../firebase";
 
-const createUser = async () => {
+const createUser = async (email: string, name: string) => {
   const user = {
-    id: "USA",
-    name: "Los Angeles",
-    email: "peter@mail.com",
+    name,
+    email,
   };
-
-  // Add a new document in collection "cities" with ID 'LA'
-  const result = await db.collection("customers").doc().set(user);
-  console.log(result, "aye");
+  const docRef =  db.collection("customers").doc();
+  const id = docRef.id;
+  const userWithId = {
+    id,
+    ...user,
+  };
+  await docRef.set(userWithId);
 };
 export { createUser };
