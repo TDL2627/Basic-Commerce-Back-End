@@ -1,5 +1,6 @@
 import express from "express";
-import * as bodyParser from "body-parser";
+import cors from "cors";
+import bodyParser from "body-parser";
 import productsRoutes from "./routes/products";
 import customerRoutes from "./routes/customer";
 import productRoutes from "./routes/product";
@@ -8,10 +9,14 @@ import ordersRoutes from "./routes/orders";
 import orderRoutes from "./routes/order";
 
 const app = express();
+
+
 const port: number = 5000;
 
 // Middleware
 app.use(bodyParser.json());
+app.use(cors());
+app.use(cors({ origin: true }));
 
 // Routes
 app.use("/customer", customerRoutes);

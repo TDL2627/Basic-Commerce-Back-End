@@ -16,8 +16,8 @@ router.post("/", async (req: Request, res: Response) => {
 router.get("/", async (req: Request, res: Response) => {
 
   const products = await getAllProducts();
+  // res.send("products");
   res.status(200).json({ message: "Products retrieved successfully" })
-  res.send("products");
 
   return products;
 });
