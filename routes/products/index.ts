@@ -14,8 +14,11 @@ router.post("/", async (req: Request, res: Response) => {
 
 // fetch all products
 router.get("/", async (req: Request, res: Response) => {
+
   const products = await getAllProducts();
   res.status(200).json({ message: "Products retrieved successfully" })
+  res.send("products");
+
   return products;
 });
 
