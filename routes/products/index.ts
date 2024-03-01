@@ -14,12 +14,13 @@ router.post("/", async (req: Request, res: Response) => {
 
 // fetch all products
 router.get("/", async (req: Request, res: Response) => {
-
-  const products = await getAllProducts();
-  // res.send("products");
-  res.status(200).json({ message: "Products retrieved successfully" })
-
-  return products;
+  try {
+    const products = await getAllProducts();
+    res.status(200).json(products);
+  } catch (error) {
+    console.error("Error retrieving products:", error);
+    res.status(500).json({ error: "Failed to retrieve products" });
+  }
 });
 
 export default router;
