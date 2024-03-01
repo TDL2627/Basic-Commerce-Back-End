@@ -1,8 +1,5 @@
 import { Request, Response, Router } from "express";
-import {
-  createMultipleOrders,
-  getAllOrders,
-} from "../../functions/orders";
+import { createMultipleOrders, getAllOrders } from "../../functions/orders";
 const router = Router();
 
 // creating multiple orders
@@ -14,10 +11,13 @@ router.post("/", async (req: Request, res: Response) => {
 
 // fetch all orders
 router.get("/", async (req: Request, res: Response) => {
-  const orders = await getAllOrders();
-  console.log(orders);
-  res.status(200).json({ message: "Orders retrieved successfully" })
-  return orders;
+  try {
+    const orders = await getAllOrders();
+    res.status(200).json(orders);
+  } catch (error) {
+    console.error("Error retrieving orders:", error);
+    res.status(500).json({ error: "Failed to retrieve orders" });
+  }
 });
 
 export default router;
