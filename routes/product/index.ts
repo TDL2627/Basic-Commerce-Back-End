@@ -12,10 +12,13 @@ const router = Router();
 // GET product by ID
 router.get("/:id", async (req: Request, res: Response) => {
   const productId = req.params.id;
-  const product = await getProduct(productId);
-  console.log(product)
-  res.json({ message: "Product recieved" });
-  return product
+  try {
+    const product = await getProduct(productId);
+    res.status(200).json(product);
+  } catch (error) {
+    console.error("Error retrieving product:", error);
+    res.status(500).json({ error: "Failed to retrieve product" });
+  }
 });
 // delete product
 router.delete("/:id", async (req: Request, res: Response) => {
@@ -27,6 +30,8 @@ router.delete("/:id", async (req: Request, res: Response) => {
 // update product
 router.put("/:id", async (req: Request, res: Response) => {
   const productId: string = req.params.id;
+  console.log(req.body,"aye body");
+  
   const { name, description, price } = req.body;
   const product = { name, description, price };
   await updateProduct(productId, product);
