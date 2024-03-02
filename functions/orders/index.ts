@@ -17,6 +17,15 @@ const getAllOrders = async () => {
   });
   return orders;
 };
+const getAllMyOrders = async (customerId: string) => {
+  const orderRef = db.collection("orders");
+  const snapshot = await orderRef.where("customerId", "==", customerId).get();
+  let orders: any = [];
+  snapshot.forEach((doc: any) => {
+    orders.push(doc.data());
+  });
+  return orders;
+};
 
 const createOrder = async (order: any) => {
   const docRef = db.collection("orders").doc();
@@ -55,5 +64,6 @@ export {
   getAllOrders,
   getOrder,
   deleteMultipleOrders,
-  createMultipleOrders
+  createMultipleOrders,
+  getAllMyOrders,
 };
