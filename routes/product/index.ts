@@ -33,7 +33,7 @@ router.put("/:id", async (req: Request, res: Response) => {
   console.log(req.body,"aye body");
   
   const { name, description, price } = req.body;
-  const product = { name, description, price };
+  const product = { name, description, price ,id: productId};
   await updateProduct(productId, product);
   res.json({ message: "Product updated successfully" });
 });
