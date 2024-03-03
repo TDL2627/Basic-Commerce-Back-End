@@ -1,16 +1,34 @@
 import { Request, Response, Router } from "express";
-import { createUser, deleteUser } from "../../functions/customer";
+import {
+  createUser,
+  deleteUser,
+  getAllUsers,
+  getUser,
+} from "../../functions/customer";
 
 const router = Router();
 
 // GET all customers
-router.get("/", (req: Request, res: Response) => {
-  // extra functionality
+router.get("/", async (req: Request, res: Response) => {
+  try {
+    const users = await getAllUsers();
+    res.status(200).json(users);
+  } catch (error) {
+    console.error("Error retrieving users:", error);
+    res.status(500).json({ error: "Failed to retrieve users" });
+  }
 });
 
 // GET customer by ID
-router.get("/:id", (req: Request, res: Response) => {
-  // extra functionality
+router.get("/:id", async (req: Request, res: Response) => {
+  const customerId = req.params.id;
+  try {
+    const user = await getUser(customerId);
+    res.status(200).json(user);
+  } catch (error) {
+    console.error("Error retrieving  user:", error);
+    res.status(500).json({ error: "Failed to retrieve orders" });
+  }
 });
 
 // DELETE customer by ID
