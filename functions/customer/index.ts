@@ -14,7 +14,7 @@ const createUser = async (email: string, name: string) => {
   await docRef.set(userWithId);
 };
 const getUser = async (customerId: string) => {
-  const userRef = db.collection("users");
+  const userRef = db.collection("customers");
   const snapshot = await userRef.where("id", "==", customerId).get();
   let user: any = [];
   snapshot.forEach((doc: any) => {
@@ -23,8 +23,8 @@ const getUser = async (customerId: string) => {
   return user;
 };
 const getAllUsers = async () => {
-  const userRef = db.collection("users");
-  const snapshot = await userRef.get();
+  const userRef = db.collection("customers");
+  const snapshot = await userRef.where("email", "!=", "admin@gmail.com").get();
   let users: any = [];
   snapshot.forEach((doc: any) => {
     users.push(doc.data());
