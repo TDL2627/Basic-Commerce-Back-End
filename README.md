@@ -1,4 +1,4 @@
-This is the backend for basic commerce created in node js using Firebase for Andile Solutions
+This is the backend for basic commerce created in node js using Firebase as database for Andile Solutions
 
 To run the project install the packages and run the follwing commands
 
