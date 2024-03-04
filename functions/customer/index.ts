@@ -5,13 +5,14 @@ const createUser = async (email: string, name: string) => {
     name,
     email,
   };
-  const docRef =  db.collection("customers").doc();
+  const docRef = db.collection("customers").doc();
   const id = docRef.id;
   const userWithId = {
     id,
     ...user,
   };
   await docRef.set(userWithId);
+  return "user created";
 };
 const getUser = async (customerId: string) => {
   const userRef = db.collection("customers");
@@ -31,7 +32,8 @@ const getAllUsers = async () => {
   });
   return users;
 };
-const deleteUser =  async (id: string)=>{
-  const res = await db.collection("customers").doc(id).delete();
-}
+const deleteUser = async (id: string) => {
+  await db.collection("customers").doc(id).delete();
+  return "user deleted";
+};
 export { createUser, deleteUser, getUser, getAllUsers };
