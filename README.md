@@ -6,6 +6,10 @@ To run the project install the packages and run the follwing commands
 npm install
 nodemon
 ```
+To run tests
 
+```bash
+npm test
+```
 
 Developed by TDL2627
